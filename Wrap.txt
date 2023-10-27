@@ -1,0 +1,77 @@
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: WrapW(),
+    );
+  }
+}
+
+class WrapW extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("GeeksForGeeks"),
+      ),
+      body: Wrap(
+        // direction: Axis.vertical, các ô xuất hiện theo chiều dọc
+        // alignment: WrapAlignment.center, căn chỉnh các ô cho đối xứng giữa 
+         spacing: 8.5,
+        children: [
+          Container(
+            color: Colors.blue,
+            width: 100,
+            height: 100,
+            child: Center(
+              child: Text(
+                'W1',
+                textScaleFactor: 2.5,
+              ),
+            ),
+          ),
+          Container(
+            color: Colors.green,
+            width: 100,
+            height: 100,
+            child: Center(
+              child: Text(
+                'W2',
+                textScaleFactor: 2.5,
+              ),
+            ),
+          ),
+          Container(
+            color: Colors.white,
+            width: 100,
+            height: 100,
+            child: Center(
+              child: Text(
+                'W2',
+                textScaleFactor: 1,
+              ),
+            ),
+          ),
+          Container(
+            color: Colors.red,
+            width: 100,
+            height: 100,
+            child: Center(
+              child: Text(
+                'W2',
+                textScaleFactor: 2.5,
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}

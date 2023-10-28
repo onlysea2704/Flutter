@@ -1,0 +1,53 @@
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(
+    MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: HomeRoute(),
+    ),
+  );
+}
+
+class HomeRoute extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.purple,
+        title: Text('Home Page'),
+      ),
+      body: Center(
+        child: ElevatedButton(
+          child: Text("Click Me Page"),
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => ClickMeRoute()),
+            );
+          },
+        ),
+      ),
+    );
+  }
+}
+
+class ClickMeRoute extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Click Me Page"),
+        backgroundColor: Colors.purple,
+      ),
+      body: Center(
+        child: ElevatedButton(
+          child: Text("Go Back Home Page"),
+          onPressed: () {
+            Navigator.pop(context);
+          },
+        ),
+      ),
+    );
+  }
+}

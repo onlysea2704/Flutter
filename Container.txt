@@ -1,0 +1,31 @@
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text("Container example"),
+        ),
+        body: Container(
+          color: Colors.green,
+          height: 200,
+          width: 300,
+					margin: EdgeInsets.all(20), // The margin is used to create an empty space around the container
+					padding: EdgeInsets.all(30), // The padding is used to give space from the border of the container from its children
+					alignment: Alignment.bottomCenter,//The alignment is used to position the child within the container
+          child:  Text(
+              "Hello! i am inside a container!",
+              style: TextStyle(fontSize: 20),
+          ),
+        ),
+      ),
+    );
+  }
+}

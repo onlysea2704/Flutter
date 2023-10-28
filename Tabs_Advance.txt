@@ -1,0 +1,83 @@
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: DefaultTabController(
+        length: 3, // Số lượng tab
+        child: Scaffold(
+          appBar: AppBar(
+            title: Text('Tabs ở Dưới Cùng'),
+          ),
+          body: Column(
+            children: <Widget>[
+              Expanded(
+                child: TabBarView(
+                  children: [
+                    Center(
+                      child: Text('Nội dung Tab 1'),
+                    ),
+                    Center(
+                      child: Text('Nội dung Tab 2'),
+                    ),
+                    Center(
+                      child: Text('Nội dung Tab 3'),
+                    ),
+                  ],
+                ),
+              ),
+              Container(
+                width: 250, // Chiều rộng của hình hộp
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(40.0),
+                  color: Colors.white, // Màu nền trắng
+                  border: Border.all(
+                    color: Colors.grey, // Màu viền đen
+                    width: 2.0, // Độ rộng của viền
+                  ),
+                ),
+                child: TabBar(
+                  labelColor: Colors.blue, // Màu của tab được chọn
+                  unselectedLabelColor:
+                      Colors.grey, // Màu của các tab không được chọn
+                  indicatorColor:
+                      Colors.transparent, // Màu của dấu hiệu dưới tab được chọn
+                  tabs: [
+                    Tab(
+                      child: Column(
+                        children: <Widget>[
+                          Icon(Icons.home),
+                          Text('Home'),
+                        ],
+                      ),
+                    ),
+                    Tab(
+                      child: Column(
+                        children: <Widget>[
+                          Icon(Icons.search),
+                          Text('Search'),
+                        ],
+                      ),
+                    ),
+                    Tab(child: Column(
+                      children: <Widget> [
+                        Icon(Icons.people),
+                        Text("Profile"),
+                      ],
+                    ),),
+                  ],
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}

@@ -1,0 +1,51 @@
+import 'package:flutter/material.dart';
+
+class Tab_Bar extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: 250, // Chiều rộng của hình hộp
+      margin: EdgeInsets.all(10),
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(40.0),
+        color: Colors.white, // Màu nền trắng
+        border: Border.all(
+          color: Colors.grey, // Màu viền đen
+          width: 2.0, // Độ rộng của viền
+        ),
+      ),
+      child: TabBar(
+        labelColor: Colors.blue, // Màu của tab được chọn
+        unselectedLabelColor: Colors.grey, // Màu của các tab không được chọn
+        indicatorColor:
+            Colors.transparent, // Màu của dấu hiệu dưới tab được chọn
+        tabs: [
+          Tab(
+            child: Column(
+              children: <Widget>[
+                Icon(Icons.home),
+                Text('Home'),
+              ],
+            ),
+          ),
+          Tab(
+            child: Column(
+              children: <Widget>[
+                Icon(Icons.search),
+                Text('Search'),
+              ],
+            ),
+          ),
+          Tab(
+            child: Column(
+              children: <Widget>[
+                Icon(Icons.people),
+                Text("Profile"),
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}

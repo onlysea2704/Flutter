@@ -1,0 +1,30 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_app/Tab_Bar.dart';
+import 'package:flutter_app/Content.dart';
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: DefaultTabController(
+        length: 3, // Số lượng tab
+        child: Scaffold(
+          appBar: AppBar(
+            title: Text('Phạm Duy Hải'),
+          ),
+          body: Column(
+            children: <Widget>[
+              
+              Content(),
+              Tab_Bar(),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}

@@ -1,0 +1,39 @@
+import 'package:flutter/material.dart';
+
+class Content extends StatelessWidget{
+  @override
+  Widget build(BuildContext context){
+    return Expanded(
+                child: Container(
+                  child: TabBarView(
+                    children: [
+                      ListView(
+                        children: <Widget>[
+                          Container(
+                            color: Colors.green,
+                            height: 300,
+                            child: Center(
+                              child: Text('Nội dung Tab 1'),
+                            ),
+                          ),
+                          Container(
+                            color: Colors.orange,
+                            height: 300,
+                            child: Center(
+                              child: Text('Nội dung Tab 1'),
+                            ),
+                          ),
+                        ],
+                      ),
+                      Center(
+                        child: Text('Nội dung Tab 2'),
+                      ),
+                      Center(
+                        child: Text('Nội dung Tab 3'),
+                      ),
+                    ],
+                  ),
+                ),
+              );
+  }
+}
